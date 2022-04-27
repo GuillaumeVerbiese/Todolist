@@ -1,0 +1,13 @@
+@use "sass:color";
+
+/*
+Sass nous fournit par defaut des modules avec lesquels travailler
+Notamment le module color, qui nous permet de rapidement mettre en place 
+des palettes de couleurs.
+La fonction color.scale() va nous permettre de créer des nuances à partir 
+d'une couleur principale
+https://sass-lang.com/documentation/modules
+*/
+
+$main-color: #2e5849;
+$dark-color: color.scale($main-color, $lightness: -20%);
