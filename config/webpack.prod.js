@@ -7,11 +7,6 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
 
 module.exports = merge(common, {
-  output: {
-    path: paths.build,
-    publicPath: '/todo/',
-    filename: 'js/[name].[contenthash].js',
-  },
   mode: 'production',
   devtool: false,
   plugins: [

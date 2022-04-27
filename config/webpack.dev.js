@@ -6,11 +6,6 @@ const common = require('./webpack.common.js');
 const port = 8080;
 
 module.exports = merge(common, {
-  output: {
-    path: paths.build,
-    publicPath: '/',
-    filename: 'js/[name].[contenthash].js',
-  },
   mode: 'development',
   devtool: 'inline-source-map',
   plugins: [
@@ -70,7 +65,7 @@ module.exports = merge(common, {
       directory: paths.build,
     },
     historyApiFallback: true,
-    open: true,
+    open: false,
     compress: true,
     hot: true,
     port,

@@ -23,6 +23,9 @@ class App extends React.PureComponent {
 
   handleInputChange(newValue) {
     // Pour modifier une valeur dans le state, on est obligé d'utiliser la fonction setState
+    // Cette fonction va faire 2 choses :
+    // - Mettre à jour le state
+    // - Recalculer le composant en se basant sur le nouveau state
     this.setState({
       inputTaskLabel: newValue,
     });
@@ -56,12 +59,14 @@ class App extends React.PureComponent {
 
     // - Modifie cette copie en lui rajoutant la nouvelle tâche
     tasksCopy.push(newTask);
+    // tasks.push(newTask);
 
     // - On envoie au nouveau state, la copie du tableau qui contient la nouvelle tâche
     this.setState({
       tasks: tasksCopy,
       inputTaskLabel: '',
     });
+    // => Comme ça, React mettra a jour correctement l'UI lors de sa phase de reconscilliation
   }
 
   // on récupère en paramètre l'id de la tache à modifier
@@ -103,7 +108,7 @@ class App extends React.PureComponent {
     const notDoneTasks = tasks.filter((item) => item.done === false);
     const nbTasksNotDone = notDoneTasks.length;
 
-    // on a déjà filtrer les taches done
+    // on a déjà filtrer les taches bot done
     // on fait de même pour les tâches done
     const doneTasks = tasks.filter((item) => item.done === true);
 

@@ -14,7 +14,12 @@ module.exports = {
     paths.src + '/styles/index.scss',
     // JS
     paths.src + '/index.js',
-  ],  
+  ],
+  output: {
+    path: paths.build,
+    publicPath: '/',
+    filename: 'js/[name].[contenthash].js',
+  },
   resolve: {
     alias: {
       src: paths.src,

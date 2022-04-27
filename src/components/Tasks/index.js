@@ -24,11 +24,22 @@ function Tasks({ tasks, onDoneChange }) {
     <ul className="list">
 
       {tasks.map((item) => {
+        // On part du tableau initial tasks pour en construire un nouveau
+        // Ce nouveau tableau va contenir autant d'éléments
+        // présents dans le tableau initial.
+        // Chaque éléments sera un <li>
+
+        // On construit la classe css du label de l'item courant
+        // en fonction de l'état de la tâche (done à true ou false)
         let cssClass = 'list-item';
         if (item.done) {
           cssClass += ' list-item--done';
         }
 
+        // On construit l'attribut id de l'input
+        // en se basant sur la propriété id de l'item courant
+        // On fait attention à préfixer l'id,
+        // on évite ainsi des conflits d'id
         const idItem = `task-${item.id}`;
 
         return (

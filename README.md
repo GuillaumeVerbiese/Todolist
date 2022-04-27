@@ -1,2 +1,0 @@
-# Todolist
-Applicatif Todolist locale
